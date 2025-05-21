@@ -172,3 +172,7 @@ cython_debug/
 
 # PyPI configuration file
 .pypirc
+
+# 대용량 데이터셋과 학습된 모델 
+/model_training/datasets/
+/model_training/trained_models/
