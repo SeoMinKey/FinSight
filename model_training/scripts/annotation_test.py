@@ -1,6 +1,7 @@
 import json
 import os
 from collections import defaultdict
+import shutil
 
 def analyze_json_structure(json_path):
     """JSON 파일의 구조를 분석하고 데이터를 정리하는 함수"""
@@ -113,13 +114,37 @@ def main():
         data = analyze_json_structure(json_path)
         
         # 결과 저장
-        output_path = "model_training/datasets/New_sample/라벨링데이터/sample_analysis.json"
+        output_path = "model_training/datasets/New_sample/전처리 샘플 데이터/sample_analysis.json"
         with open(output_path, 'w', encoding='utf-8') as f:
             json.dump(data, f, ensure_ascii=False, indent=2)
         print(f"\n분석 결과가 {output_path}에 저장되었습니다.")
         
     except Exception as e:
         print(f"오류 발생: {str(e)}")
+    
+    try:
+        #filename에 맞는 이미지 확인 후 복사
+        target_dir = "model_training/datasets/New_sample/전처리 샘플 데이터/sample_analysis.json"
+        with open(target_dir, 'r', encoding='utf-8') as f:
+            data = json.load(f)
+        
+        for img_id, info in data["sample_images"].items():
+            dst = "model_training/datasets/New_sample/전처리 샘플 데이터/img_sample"
+            src = "model_training/datasets/New_sample/원천데이터/dtset1"
+            file_name = info['filename']
+
+            dst_path = os.path.join(dst, file_name)
+            
+            if os.path.exists(src):
+                shutil.copy2(src, dst_path)
+                print(f"복사 완료: {src} -> {dst_path}")
+            else:
+                print(f"파일 없음: {src_path}")
+    except Exception as e:
+        print(f"파일 복사 오류 발생: {e}")
+
+
+            
 
 if __name__ == '__main__':
     main() 
