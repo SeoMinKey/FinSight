@@ -1,0 +1,131 @@
+{
+  "categories": {
+    "1": "Olive flounder",
+    "2": "Korea rockfish",
+    "3": "Red seabream",
+    "4": "Black porgy",
+    "5": "Rock bream"
+  },
+  "sample_images": {
+    "0": {
+      "filename": "./560364_objt_kr_2021-02-05_11-42-12-33_002.JPG",
+      "categories": [
+        "Korea rockfish"
+      ]
+    },
+    "1": {
+      "filename": "./311867_objt_bp_2021-01-19_15-31-35-33_002.JPG",
+      "categories": [
+        "Black porgy"
+      ]
+    },
+    "2": {
+      "filename": "./178923_objt_kr_2020-12-20_13-43-46-66_003.JPG",
+      "categories": [
+        "Korea rockfish"
+      ]
+    },
+    "3": {
+      "filename": "./234110_objt_bp_2021-01-12_09-55-50-00_001.JPG",
+      "categories": [
+        "Black porgy"
+      ]
+    },
+    "4": {
+      "filename": "./392885_objt_rb_2021-01-22_10-26-05-33_002.JPG",
+      "categories": [
+        "Rock bream"
+      ]
+    },
+    "5": {
+      "filename": "./600130_objt_of_2021-02-04_11-46-02-00_001.JPG",
+      "categories": [
+        "Olive flounder"
+      ]
+    },
+    "6": {
+      "filename": "./565893_objt_kr_2021-02-05_12-03-07-66_003.JPG",
+      "categories": [
+        "Korea rockfish"
+      ]
+    },
+    "7": {
+      "filename": "./605927_objt_kr_2021-02-05_13-11-22-66_003.JPG",
+      "categories": [
+        "Korea rockfish"
+      ]
+    },
+    "8": {
+      "filename": "./119799_objt_rs_2020-12-15_13-14-02-33_002.JPG",
+      "categories": [
+        "Red seabream"
+      ]
+    },
+    "9": {
+      "filename": "./438764_objt_kr_2021-01-28_12-06-28-66_003.JPG",
+      "categories": [
+        "Korea rockfish"
+      ]
+    },
+    "10": {
+      "filename": "./362955_objt_rb_2021-01-23_09-05-17-66_004.JPG",
+      "categories": [
+        "Rock bream"
+      ]
+    },
+    "11": {
+      "filename": "./526536_objt_rb_2021-02-01_11-11-58-33_002.JPG",
+      "categories": [
+        "Rock bream"
+      ]
+    },
+    "12": {
+      "filename": "./307288_objt_bp_2021-01-19_12-04-30-66_003.JPG",
+      "categories": [
+        "Black porgy"
+      ]
+    },
+    "13": {
+      "filename": "./201414_objt_bp_2020-12-21_13-43-25-00_001.JPG",
+      "categories": [
+        "Black porgy"
+      ]
+    },
+    "14": {
+      "filename": "./574071_objt_of_2021-02-05_11-20-31-00_001.JPG",
+      "categories": [
+        "Olive flounder"
+      ]
+    },
+    "15": {
+      "filename": "./374815_objt_of_2021-01-06_09-19-22-66_003.JPG",
+      "categories": [
+        "Olive flounder"
+      ]
+    },
+    "16": {
+      "filename": "./398668_objt_rb_2021-01-21_22-04-25-33_002.JPG",
+      "categories": [
+        "Rock bream"
+      ]
+    },
+    "17": {
+      "filename": "./282150_objt_rs_2021-01-18_09-30-14-33_002.JPG",
+      "categories": [
+        "Red seabream"
+      ]
+    },
+    "18": {
+      "filename": "./164203_objt_kr_2020-12-19_19-01-47-33_002.JPG",
+      "categories": [
+        "Korea rockfish"
+      ]
+    },
+    "19": {
+      "filename": "./526584_objt_rb_2021-02-01_11-12-46-00_001.JPG",
+      "categories": [
+        "Rock bream"
+      ]
+    }
+  }
+}

@@ -29,7 +29,7 @@ def analyze_json_structure(json_path):
         print(f"ID: {cat_id}, 이름: {cat_name}")
     
     # 2. 이미지 정보 분석 
-    limit = 20 #처음 20개만 사용
+    limit = 20 #20개만 사용
     '''이미지 데이터 구조
     "images":
     [{
@@ -105,46 +105,45 @@ def analyze_json_structure(json_path):
     
     return sample_data
 
-def main():
-    # JSON 파일 경로
-    json_path = "model_training/datasets/New_sample/라벨링데이터/gbt_fish_dtset1.json"
-    
-    try:
-        # JSON 파일 분석
-        data = analyze_json_structure(json_path)
-        
-        # 결과 저장
-        output_path = "model_training/datasets/New_sample/전처리 샘플 데이터/sample_analysis.json"
-        with open(output_path, 'w', encoding='utf-8') as f:
-            json.dump(data, f, ensure_ascii=False, indent=2)
-        print(f"\n분석 결과가 {output_path}에 저장되었습니다.")
-        
-    except Exception as e:
-        print(f"오류 발생: {str(e)}")
-    
-    try:
-        #filename에 맞는 이미지 확인 후 복사
-        target_dir = "model_training/datasets/New_sample/전처리 샘플 데이터/sample_analysis.json"
-        with open(target_dir, 'r', encoding='utf-8') as f:
-            data = json.load(f)
-        
-        for img_id, info in data["sample_images"].items():
-            dst = "model_training/datasets/New_sample/전처리 샘플 데이터/img_sample"
-            src = "model_training/datasets/New_sample/원천데이터/dtset1"
-            file_name = info['filename']
+# 기본 경로
+BASE_PATH = "C:/Users/서민기/Desktop/인공지능개론시험준비/기말프로젝트/FinSight/model_training/datasets"
 
-            dst_path = os.path.join(dst, file_name)
+# 원본 데이터 경로
+ORIGINAL_JSON_PATH = os.path.join(BASE_PATH, "어류 개체 촬영 영상/Training/gbt_fish_dtset1.json")
+ORIGINAL_DATASET_PATH = os.path.join(BASE_PATH, "어류 개체 촬영 영상/Training/dtset1")
+
+# 새로운 샘플 데이터 경로
+SAMPLE_OUTPUT_PATH = os.path.join(BASE_PATH, "New_sample/전처리 샘플 데이터/sample_analysis_new.json")
+SAMPLE_IMAGE_PATH = os.path.join(BASE_PATH, "New_sample/전처리 샘플 데이터/img_sample")
+
+def main():
+    try:
+        # JSON 파일에서 데이터 읽기
+        sample_data = analyze_json_structure(ORIGINAL_JSON_PATH)
             
-            if os.path.exists(src):
-                shutil.copy2(src, dst_path)
-                print(f"복사 완료: {src} -> {dst_path}")
+        # 결과 저장
+        with open(SAMPLE_OUTPUT_PATH, 'w', encoding='utf-8') as f:
+            json.dump(sample_data, f, ensure_ascii=False, indent=2)
+        print(f"\n분석 결과가 {SAMPLE_OUTPUT_PATH}에 저장되었습니다.")
+        
+        # 파일 복사 부분
+        for img_id, info in sample_data["sample_images"].items():
+            file_name = info['filename'].replace('./', '')
+            src_path = os.path.join(ORIGINAL_DATASET_PATH, file_name)
+            dst_path = os.path.join(SAMPLE_IMAGE_PATH, file_name)
+            
+            os.makedirs(SAMPLE_IMAGE_PATH, exist_ok=True)
+            
+            if os.path.exists(src_path):
+                shutil.copy2(src_path, dst_path)
+                print(f"복사 완료: {src_path} -> {dst_path}")
             else:
                 print(f"파일 없음: {src_path}")
     except Exception as e:
-        print(f"파일 복사 오류 발생: {e}")
+        print(f"파일 복사 오류 발생: {str(e)}")
 
 
             
 
 if __name__ == '__main__':
-    main() 
+    main()
