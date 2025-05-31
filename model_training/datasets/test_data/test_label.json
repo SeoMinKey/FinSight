@@ -1,0 +1,311 @@
+{
+    "categories": {
+        "1": "Olive flounder",
+        "2": "Korea rockfish",
+        "3": "Red seabream",
+        "4": "Black porgy",
+        "5": "Rock bream"
+    },
+    "sample_images": {
+        "0": {
+        "filename": "./img_1.jpg",
+        "categories": [
+            "Olive flounder"
+        ]
+        },
+        "1": {
+        "filename": "./img_2.jpg",
+        "categories": [
+            "Olive flounder"
+        ]
+        },
+        "2": {
+        "filename": "./img_3.jpg",
+        "categories": [
+            "Olive flounder"
+        ]
+        },
+        "3": {
+        "filename": "./img_4.jpg",
+        "categories": [
+            "Olive flounder"
+        ]
+        },
+        "4": {
+        "filename": "./img_5.jpg",
+        "categories": [
+            "Olive flounder"
+        ]
+        },
+        "5": {
+        "filename": "./img_6.jpg",
+        "categories": [
+            "Olive flounder"
+        ]
+        },
+        "6": {
+        "filename": "./img_7.jpg",
+        "categories": [
+            "Olive flounder"
+        ]
+        },
+        "7": {
+        "filename": "./img_8.jpg",
+        "categories": [
+            "Olive flounder"
+        ]
+        },
+        "8": {
+        "filename": "./img_9.jpg",
+        "categories": [
+            "Olive flounder"
+        ]
+        },
+        "9": {
+        "filename": "./img_10.jpg",
+        "categories": [
+            "Olive flounder"
+        ]
+        },
+        "10": {
+        "filename": "./img_11.jpg",
+        "categories": [
+            "Korea rockfish"
+        ]
+        },
+        "11": {
+        "filename": "./img_12.jpg",
+        "categories": [
+            "Korea rockfish"
+        ]
+        },
+        "12": {
+        "filename": "./img_13.jpg",
+        "categories": [
+            "Korea rockfish"
+        ]
+        },
+        "13": {
+        "filename": "./img_14.jpg",
+        "categories": [
+            "Korea rockfish"
+        ]
+        },
+        "14": {
+        "filename": "./img_15.jpg",
+        "categories": [
+            "Korea rockfish"
+        ]
+        },
+        "15": {
+        "filename": "./img_16.jpg",
+        "categories": [
+            "Korea rockfish"
+        ]
+        },
+        "16": {
+        "filename": "./img_17.jpg",
+        "categories": [
+            "Korea rockfish"
+        ]
+        },
+        "17": {
+        "filename": "./img_18.jpg",
+        "categories": [
+            "Korea rockfish"
+        ]
+        },
+        "18": {
+        "filename": "./img_19.jpg",
+        "categories": [
+            "Korea rockfish"
+        ]
+        },
+        "19": {
+        "filename": "./img_20.jpg",
+        "categories": [
+            "Korea rockfish"
+        ]
+        },
+        "20": {
+        "filename": "./img_21.jpg",
+        "categories": [
+            "Red seabream"
+        ]
+        },
+        "21": {
+        "filename": "./img_22.jpg",
+        "categories": [
+            "Red seabream"
+        ]
+        },
+        "22": {
+        "filename": "./img_23.jpg",
+        "categories": [
+            "Red seabream"
+        ]
+        },
+        "23": {
+        "filename": "./img_24.jpg",
+        "categories": [
+            "Red seabream"
+        ]
+        },
+        "24": {
+        "filename": "./img_25.jpg",
+        "categories": [
+            "Red seabream"
+        ]
+        },
+        "25": {
+        "filename": "./img_26.jpg",
+        "categories": [
+            "Red seabream"
+        ]
+        },
+        "26": {
+        "filename": "./img_27.jpg",
+        "categories": [
+            "Red seabream"
+        ]
+        },
+        "27": {
+        "filename": "./img_28.jpg",
+        "categories": [
+            "Red seabream"
+        ]
+        },
+        "28": {
+        "filename": "./img_29.jpg",
+        "categories": [
+            "Red seabream"
+        ]
+        },
+        "29": {
+        "filename": "./img_30.jpg",
+        "categories": [
+            "Red seabream"
+        ]
+        },
+        "30": {
+        "filename": "./img_31.jpg",
+        "categories": [
+            "Rock bream"
+        ]
+        },
+        "31": {
+        "filename": "./img_32.jpg",
+        "categories": [
+            "Rock bream"
+        ]
+        },
+        "32": {
+        "filename": "./img_33.jpg",
+        "categories": [
+            "Rock bream"
+        ]
+        },
+        "33": {
+        "filename": "./img_34.jpg",
+        "categories": [
+            "Rock bream"
+        ]
+        },
+        "34": {
+        "filename": "./img_35.jpg",
+        "categories": [
+            "Rock bream"
+        ]
+        },
+        "35": {
+        "filename": "./img_36.jpg",
+        "categories": [
+            "Rock bream"
+        ]
+        },
+        "36": {
+        "filename": "./img_37.jpg",
+        "categories": [
+            "Rock bream"
+        ]
+        },
+        "37": {
+        "filename": "./img_38.jpg",
+        "categories": [
+            "Rock bream"
+        ]
+        },
+        "38": {
+        "filename": "./img_39.jpg",
+        "categories": [
+            "Rock bream"
+        ]
+        },
+        "39": {
+        "filename": "./img_40.jpg",
+        "categories": [
+            "Rock bream"
+        ]
+        },
+        "40": {
+        "filename": "./img_41.jpg",
+        "categories": [
+            "Black porgy"
+        ]
+        },
+        "41": {
+        "filename": "./img_42.jpg",
+        "categories": [
+            "Black porgy"
+        ]
+        },
+        "42": {
+        "filename": "./img_43.jpg",
+        "categories": [
+            "Black porgy"
+        ]
+        },
+        "43": {
+        "filename": "./img_44.jpg",
+        "categories": [
+            "Black porgy"
+        ]
+        },
+        "44": {
+        "filename": "./img_45.jpg",
+        "categories": [
+            "Black porgy"
+        ]
+        },
+        "45": {
+        "filename": "./img_46.jpg",
+        "categories": [
+            "Black porgy"
+        ]
+        },
+        "46": {
+        "filename": "./img_47.jpg",
+        "categories": [
+            "Black porgy"
+        ]
+        },
+        "47": {
+        "filename": "./img_48.jpg",
+        "categories": [
+            "Black porgy"
+        ]
+        },
+        "48": {
+        "filename": "./img_49.jpg",
+        "categories": [
+            "Black porgy"
+        ]
+        },
+        "49": {
+        "filename": "./img_50.jpg",
+        "categories": [
+            "Black porgy"
+        ]
+        }
+    }
+}
