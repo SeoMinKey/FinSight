@@ -174,5 +174,7 @@ cython_debug/
 .pypirc
 
 # 대용량 데이터셋과 학습된 모델 
-model_training\datasets
-/model_training/trained_models/
+model_training\datasets/078.어류 개체 촬영 영상
+model_training\datasets/New_sample
+model_training\datasets/processed_dt
+model_training\datasets/어류 개체 촬영 영상
