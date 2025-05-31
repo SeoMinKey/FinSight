@@ -6,11 +6,16 @@ from torchvision import models, transforms
 from torch.utils.data import DataLoader, Dataset
 from PIL import Image
 from tqdm import tqdm
+from sklearn.metrics import confusion_matrix, ConfusionMatrixDisplay
+import matplotlib.pyplot as plt
+import numpy as np
+
 
 # 경로 설정
 TEST_JSON_PATH = 'C:/Users/서민기/Desktop/인공지능개론시험준비/기말프로젝트/FinSight/model_training/datasets/test_data/test_label.json'
 TEST_DATA_PATH = 'C:/Users/서민기/Desktop/인공지능개론시험준비/기말프로젝트/FinSight/model_training/datasets/test_data'
-MODEL_PATH = 'C:/Users/서민기/Desktop/인공지능개론시험준비/기말프로젝트/FinSight/model_training/datasets/trained_models/resnet18_finetune.pth'
+MODEL_PATH = 'C:/Users/서민기/Desktop/인공지능개론시험준비/기말프로젝트/FinSight/model_training/datasets/trained_models/resnet18_finetune.pth' 
+#resnet18_finetune.pth   resnet18_pretrained_fish
 
 # Transform 정의 (학습과 동일해야 함)
 transform = transforms.Compose([
@@ -57,11 +62,11 @@ def evaluate_model(model, dataloader, criterion, device, class_names):
     running_loss = 0.0
     correct = 0
     total = 0
+    all_labels = []
+    all_preds = []
 
-    # 클래스별 통계용 초기화
-    num_classes = len(class_names)
-    correct_per_class = [0] * num_classes
-    total_per_class = [0] * num_classes
+    class_correct = [0] * len(class_names)
+    class_total = [0] * len(class_names)
 
     if len(dataloader.dataset) == 0:
         print("⚠️ 테스트 데이터셋이 비어 있습니다.")
@@ -80,45 +85,34 @@ def evaluate_model(model, dataloader, criterion, device, class_names):
             correct += (predicted == labels).sum().item()
             total += labels.size(0)
 
-            # 클래스별 통계 업데이트
-            for i in range(len(labels)):
+            for i in range(labels.size(0)):
                 label = labels[i].item()
                 pred = predicted[i].item()
+                class_total[label] += 1
                 if label == pred:
-                    correct_per_class[label] += 1
-                total_per_class[label] += 1
+                    class_correct[label] += 1
 
-    # 클래스별 정확도 출력
+            all_labels.extend(labels.cpu().numpy())
+            all_preds.extend(predicted.cpu().numpy())
+
     print("\n📌 클래스별 정확도:")
-    for i in range(num_classes):
-        accuracy = correct_per_class[i] / total_per_class[i] if total_per_class[i] > 0 else 0.0
-        print(f"  - {class_names[i]}: {accuracy:.4f}")
+    for i, class_name in enumerate(class_names):
+        if class_total[i] > 0:
+            acc = class_correct[i] / class_total[i]
+            print(f"  {class_name}: {acc:.4f} ({class_correct[i]}/{class_total[i]})")
+        else:
+            print(f"  {class_name}: 데이터 없음")
+
+    # 기존 혼동 행렬 출력 부분 그대로 유지
+    cm = confusion_matrix(all_labels, all_preds)
+    disp = ConfusionMatrixDisplay(confusion_matrix=cm, display_labels=class_names)
+    disp.plot(xticks_rotation=45, cmap=plt.cm.Blues)
+    plt.title("Confusion Matrix")
+    plt.tight_layout()
+    plt.show()
 
     return running_loss / total, correct / total
 
-    model.eval()
-    running_loss = 0.0
-    correct = 0
-    total = 0
-
-    if len(dataloader.dataset) == 0:
-        print("⚠️ 테스트 데이터셋이 비어 있습니다.")
-        return 0.0, 0.0
-
-    with torch.no_grad():
-        for images, labels in tqdm(dataloader, desc="Evaluating"):
-            images = images.to(device)
-            labels = labels.to(device)
-
-            outputs = model(images)
-            loss = criterion(outputs, labels)
-            running_loss += loss.item() * images.size(0)
-
-            _, predicted = torch.max(outputs, 1)
-            correct += (predicted == labels).sum().item()
-            total += labels.size(0)
-
-    return running_loss / total, correct / total
 
 # 메인 실행
 def main():
