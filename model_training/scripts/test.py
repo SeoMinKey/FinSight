@@ -14,8 +14,9 @@ import numpy as np
 # 경로 설정
 TEST_JSON_PATH = 'C:/Users/서민기/Desktop/인공지능개론시험준비/기말프로젝트/FinSight/model_training/datasets/test_data/test_label.json'
 TEST_DATA_PATH = 'C:/Users/서민기/Desktop/인공지능개론시험준비/기말프로젝트/FinSight/model_training/datasets/test_data'
-MODEL_PATH = 'C:/Users/서민기/Desktop/인공지능개론시험준비/기말프로젝트/FinSight/model_training/datasets/trained_models/resnet18_finetune.pth' 
+MODEL_PATH = 'C:/Users/서민기/Desktop/인공지능개론시험준비/기말프로젝트/FinSight/model_training/datasets/trained_models/resnet18_train_all_2.pth' 
 #resnet18_finetune.pth   resnet18_pretrained_fish
+#resnet18_finetune_weight_1
 
 # Transform 정의 (학습과 동일해야 함)
 transform = transforms.Compose([
