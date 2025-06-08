@@ -11,18 +11,20 @@ import glob
 from tqdm import tqdm  # 진행률 표시 바
 
 # 프로젝트 경로 설정
-BASE_PATH = "C:/Users/서민기/Desktop/인공지능개론시험준비/기말프로젝트/FinSight/model_training/datasets"
+CODE_PATH = os.path.dirname(os.path.abspath(__file__))
+BASE_PATH = os.path.join(CODE_PATH, '..', 'datasets')
+
 SAMPLE_IMAGE_PATH = os.path.join(BASE_PATH, "processed_dt/img_cropped_sample")  # 크롭된 이미지 경로
 SAMPLE_JSON_PATH = os.path.join(BASE_PATH, "processed_dt/sample_analysis_new.json")  # 어노테이션 파일 경로
 
 MODEL_SAVE_PATH = os.path.join(BASE_PATH, "trained_models")  # 학습된 모델 저장 경로
 MODEL_NAME = 'resnet18_pretrained_fish.pth' # 모델 파일 이름
 
-# img_sample 경로 추가
+# 전처리한 테스트 데이터 저장 경로 추가
 TEST_DATA_PATH = os.path.join(BASE_PATH, "test_data")  # 테스트 데이터 경로
 TEST_JSON_PATH = os.path.join(BASE_PATH, "test_data/test_label.json")  # 테스트 데이터 경로
 
-#processed_dt/img_sample
+
 # 커스텀 데이터셋 클래스 정의
 class FishDataset(Dataset):
     def __init__(self, json_path, img_dir, transform=None):

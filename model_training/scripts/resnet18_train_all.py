@@ -21,7 +21,8 @@ HYPERPARAMS = {
 }
 
 # 경로 설정
-BASE_PATH = "C:/Users/서민기/Desktop/인공지능개론시험준비/기말프로젝트/FinSight/model_training/datasets"
+CODE_PATH = os.path.dirname(os.path.abspath(__file__))
+BASE_PATH = os.path.join(CODE_PATH, '..', 'datasets')
 SAMPLE_IMAGE_PATH = os.path.join(BASE_PATH, "processed_dt/img_cropped_sample")
 SAMPLE_JSON_PATH = os.path.join(BASE_PATH, "processed_dt/sample_analysis_new.json")
 TEST_DATA_PATH = os.path.join(BASE_PATH, "test_data")
